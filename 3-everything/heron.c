@@ -11,7 +11,7 @@ static double const eps1p24 = 1.0 + 0x1P-24;
 int main(int argc, char *argv[argc + 1])
 {
     /* 
-    Taken from 
+    Taken from https://stackoverflow.com/questions/3024197/what-does-int-argc-char-argv-mean
     - argv and argc are how command line arguments are passed to main() in C and C++.
     - argc will be the number of strings pointed to by argv. This will (in practice) 
       be 1 plus the number of arguments, as virtually all implementations will prepend 
