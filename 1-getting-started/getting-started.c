@@ -13,7 +13,7 @@ int main (void) {
     };
 
     // Doing some work
-    for (size_t i = 0; i < 5; ++i)
+    for (size_t i = 0; i < 4; ++i)
     {
         printf(
             "element %zu is %g, \tits square is %g\n", 
