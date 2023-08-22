@@ -65,7 +65,7 @@ int main(int argc, char *argv[argc + 1])
             }
         }
 
-        printf("final value:        a=%.2f,\tx=%.2f,\ta*x=%.12f\n", a, x, a * x);
+        printf("final value: a=%.2f,\tx=%.2f,\ta*x=%.12f\n", a, x, a * x);
         puts("--------------------------------");
     }
 }
