@@ -2,7 +2,19 @@
 #include <stdio.h>
 
 int main(int argc, char *argv[argc + 1]) {
-    long int li = strtol(argv[1], NULL, 10);
+    /* 
+    strtol is a function that converts a byte string (pointed to by the first 
+    argument) to an integer. It should be an enhanced version of atoi since it
+    returns an informative output in case of error. In fact, 
+    > If the str is empty or does not have the expected form, no conversion is 
+    > performed, and (if str_end is not a null pointer) the value of str is 
+    > stored in the object pointed to by str_end.
+    */
+    long li = strtol(argv[1], NULL, 10);
+
+    /* NB: The expression defining the switch statement (i.e. (li)) can be 
+    any expression of integer type, so not only int but also char, unsigned, 
+    long, long long and I don't need type casting.*/
 
     switch (li) {
         /* The following works since 
