@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 int main(int argc, char *argv[argc + 1]) {
     /* 
@@ -10,7 +11,17 @@ int main(int argc, char *argv[argc + 1]) {
     > performed, and (if str_end is not a null pointer) the value of str is 
     > stored in the object pointed to by str_end.
     */
-    long li = strtol(argv[1], NULL, 10);
+
+   /* Some tests with error handling taken from https://en.cppreference.com/w/c/string/byte/strtol*/
+    errno = 0;
+    char *end; 
+    long li = strtol(argv[1], &end, 10);
+    const bool range_error = errno == ERANGE;
+
+    if (range_error) {
+        puts("Range error occurred :(");
+        return EXIT_FAILURE;
+    }
 
     /* NB: The expression defining the switch statement (i.e. (li)) can be 
     any expression of integer type, so not only int but also char, unsigned, 
