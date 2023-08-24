@@ -23,6 +23,8 @@ int main(int argc, char *argv[argc + 1]) {
         return EXIT_FAILURE;
     }
 
+    /* TODO: Add an error handling in case of "no conversion can be performed, 0 is returned"*/
+
     /* NB: The expression defining the switch statement (i.e. (li)) can be 
     any expression of integer type, so not only int but also char, unsigned, 
     long, long long and I don't need type casting.*/
