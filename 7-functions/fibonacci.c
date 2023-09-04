@@ -4,10 +4,10 @@
 #include <stdbool.h>
 #include <errno.h>
 
-long to_long(char* input) {
+long long to_long(char* input) {
     errno = 0; 
     char *end; 
-    long digit = strtol(input, &end, 10); 
+    long long digit = strtoll(input, &end, 10); 
 
     const bool range_error = errno == ERANGE; 
     if (range_error) {
@@ -24,7 +24,7 @@ long to_long(char* input) {
     return digit; 
 }
 
-long fib(long n) {
+long long fib(long long n) {
     if (n < 3) {
         return 1; 
     }
@@ -33,14 +33,14 @@ long fib(long n) {
 
 int main(int argc, char* argv[argc + 1]) {
     assert(argc == 2);
-    long n = to_long(argv[1]);
+    long long n = to_long(argv[1]);
     assert(n >= 0);  
 
-    printf("The first %li digits of the Fibonacci sequence are: \n", n); 
-    for (long i = 1; i <= n; ++i)
+    printf("The first %lli digits of the Fibonacci sequence are: \n", n); 
+    for (long long i = 1; i <= n; ++i)
     {
-        printf("%li ", fib(i)); 
+        printf("%lli ", fib(i)); 
     }
-    
+   
     return EXIT_SUCCESS; 
 }
